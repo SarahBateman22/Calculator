@@ -10,7 +10,7 @@
 
 <img width="400" alt="interp" src="https://github.com/SarahBateman22/MSDscript/assets/142822160/fc99c1ac-f7be-439a-b6f6-2bf76acfc5f0">
 
-When the "--interp" flag is called the program uses parsing to recognize keywords like "_let" and "_in" to evaluate complex expressions correctly. Simple arithmetic expressions are supported as well.
+"--interp" flag uses custom parser to recognize keywords like "_let" and "_in" to evaluate complex expressions correctly. Simple arithmetic expressions are supported as well.
 
 
 
