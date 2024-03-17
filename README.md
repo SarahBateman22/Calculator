@@ -11,3 +11,15 @@
 <img width="400" alt="interp" src="https://github.com/SarahBateman22/MSDscript/assets/142822160/fc99c1ac-f7be-439a-b6f6-2bf76acfc5f0">
 
 When the "--interp" flag is called the program uses parsing to recognize keywords like "_let" and "_in" to evaluate complex expressions correctly. Simple arithmetic expressions are supported as well.
+
+
+
+<img width="463" alt="print" src="https://github.com/SarahBateman22/MSDscript/assets/142822160/2b484757-4426-48c9-8258-10f487fa57d1">
+
+"--print" flag accepts expressions, parses them (including skipping whitespaces), and prints with correct arithmetic grammar.
+
+
+
+<img width="574" alt="test" src="https://github.com/SarahBateman22/MSDscript/assets/142822160/8a9a76f1-4351-421b-b77d-07ba08375959">
+
+"--test" flag runs unit tests for the program.
