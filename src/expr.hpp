@@ -1,9 +1,9 @@
-//
-//  expr.hpp
-//  WorkingProject
-//
-//  Created by Sarah Bateman on 1/19/24.
-//
+/**
+ *\file expr.hpp
+ *\brief Expression header class
+ *
+ * Contains header signatures for expr.cpp file
+ */
 
 #ifndef expr_hpp
 #define expr_hpp
@@ -15,9 +15,9 @@
 #endif /* expr_hpp */
 
 typedef enum {
-  prec_none,      // = 0
-  prec_add,       // = 1
-  prec_mult       // = 2
+    prec_none = 0,      // = 0
+  prec_add = 1,       // = 1
+  prec_mult = 2       // = 2
 } precedence_t;
 
 
@@ -35,7 +35,7 @@ public:
         return st.str();
     }
     void pretty_print(std::ostream&);
-    virtual void pretty_print_at(std::ostream &o, precedence_t mode);
+    virtual void pretty_print_at(std::ostream &o, precedence_t mode, bool let_parent, std::streampos strmpos);
     std::string to_pretty_string();
 };
 
@@ -60,8 +60,7 @@ public:
     bool has_variable();
     Expr* subst(const std::string var, Expr* replacement);
     void print(std::ostream&);
-    void pretty_print(std::ostream &o);
-    void pretty_print_at(std::ostream &o, precedence_t mode);
+    void pretty_print_at(std::ostream &o, precedence_t mode, bool let_parent, std::streampos strmpos);
 };
 
 class Mult : public Expr {
@@ -74,18 +73,31 @@ public:
     bool has_variable();
     Expr* subst(const std::string var, Expr* replacement);
     void print(std::ostream&);
-    void pretty_print(std::ostream &o);
-    void pretty_print_at(std::ostream &o, precedence_t mode);
+    void pretty_print_at(std::ostream &o, precedence_t mode, bool let_parent, std::streampos strmpos);
 };
 
 class Var : public Expr {
 public:
     std::string name;
-
     Var(const std::string& name);
     bool equals(const Expr* other) override;
     int interp() override;
     bool has_variable() override;
     Expr* subst(const std::string var, Expr* replacement) override;
     void print(std::ostream&) override;
+};
+
+class Let : public Expr {
+public:
+    std::string name;
+    Expr *nameVal;
+    Expr *bodyExpr;
+    Let(const std::string name, Expr *nameVal, Expr *bodyExpr);
+    bool equals(const Expr* other) override;
+    int interp() override;
+    bool has_variable() override;
+    bool has_variable_excluding(const Expr* expr, const std::string& excludeVar);
+    Expr* subst(const std::string var, Expr* replacement) override;
+    void print(std::ostream &o) override;
+    void pretty_print_at(std::ostream &ostream, precedence_t prec, bool let_parent, std::streampos strmpos);
 };

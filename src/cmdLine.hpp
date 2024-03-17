@@ -1,9 +1,10 @@
-//
-//  cmdLine.hpp
-//  MSDscript
-//
-//  Created by Sarah Bateman on 1/11/24.
-//
+/**
+ *\file cmdLine.hpp
+ *\brief Command line header class
+ *
+ * Contains header signatures for cmdLine.cpp file
+ */
+
 
 #ifndef cmdLine_hpp
 #define cmdLine_hpp
@@ -12,5 +13,13 @@
 
 #endif /* cmdLine_hpp */
 
-void use_arguments(int argc, const char **argv);
+enum run_mode_t {
+    do_nothing,
+    do_test,
+    do_interp,
+    do_print,
+    do_pretty_print
+};
+
+run_mode_t use_arguments(int argc, const char **argv);
 
