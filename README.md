@@ -1,5 +1,7 @@
 # Calculator
-*Still Being Updated* MSDscript is a sophisticated interpreter designed for the dynamic parsing, evaluation, and printing of user inputs. It leverages a custom parsing algorithm that efficiently interprets expressions and commands, facilitating the rapid development and testing of code in a controlled environment. 
+*Still Being Updated* 
+
+MSDscript is a sophisticated interpreter designed for the dynamic parsing, evaluation, and printing of user inputs. It leverages a custom parsing algorithm that efficiently interprets expressions and commands, facilitating the rapid development and testing of code in a controlled environment. 
 
 
 <img width="400" alt="help" src="https://github.com/SarahBateman22/MSDscript/assets/142822160/cbbe3152-f0c3-4678-8caf-03ac33075b13">
